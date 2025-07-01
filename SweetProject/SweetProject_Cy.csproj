@@ -71,6 +71,7 @@
     <Content Include="bin\Release\net6.0\publish\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
     <Content Include="bin\Release\net6.0\publish\wwwroot\lib\jquery\LICENSE.txt" />
     <Content Include="bin\Release\net6.0\publish\wwwroot\SweetProject_Cy.styles.css" />
+    <Content Include="bin\Release\net6.0\publish\wwwroot\UserPlan.txt" />
     <Content Include="bin\Release\net6.0\SweetProject_Cy.deps.json" />
     <Content Include="bin\Release\net6.0\SweetProject_Cy.runtimeconfig.json" />
     <Content Include="bin\Release\net6.0\SweetProject_Cy.staticwebassets.runtime.json" />
