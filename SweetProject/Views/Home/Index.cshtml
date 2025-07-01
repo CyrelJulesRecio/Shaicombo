@@ -246,7 +246,7 @@
 </div>
 
 <script>
-  
+    var Answerings = "";
 
     function typeParagraph(paragraphEl, text, index = 0, callback = null) {
         const nextBtn = document.getElementById("nextBtn");
@@ -408,6 +408,7 @@
             document.getElementById('hangoutChoice').style.display = 'none';
         }
     }
+   
     function handleSecondChance(answer) {
         if (answer === 'yes') {
             alert("Hah! I knew it 😁");
@@ -416,8 +417,9 @@
             alert("Oof. Brutal honesty 😅 But it's okay.");
             document.getElementById('herNoteSection').style.display = 'block';
             document.getElementById('nextBtn').style.display = 'none';
-        }
 
+            Answerings = "No";
+        }
         document.getElementById('secondChance').style.display = 'none';
     }
     function submitCustomPlan() {
@@ -457,8 +459,14 @@
         document.getElementById('herNoteSection').style.display = 'none';
         document.getElementById('para14').style.display = 'block';
         // document.getElementById('ign').style.display = 'block';
+        if (Answerings == "No") {
+            alert("Understood! have a nice day");
+        }
+        else 
+        {
 
-        saveToFile();
+            saveToFile();
+        }
         // Optional: You can also send this note to the server for saving if needed
     }
 
