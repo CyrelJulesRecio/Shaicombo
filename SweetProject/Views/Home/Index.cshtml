@@ -246,7 +246,7 @@
 </div>
 
 <script>
-    var Answerings = "";
+   
 
     function typeParagraph(paragraphEl, text, index = 0, callback = null) {
         const nextBtn = document.getElementById("nextBtn");
@@ -409,19 +409,7 @@
         }
     }
    
-    function handleSecondChance(answer) {
-        if (answer === 'yes') {
-            alert("Hah! I knew it 😁");
-            document.getElementById('para25').style.display = 'block';
-        } else {
-            alert("Oof. Brutal honesty 😅 But it's okay.");
-            document.getElementById('herNoteSection').style.display = 'block';
-            document.getElementById('nextBtn').style.display = 'none';
-
-            Answerings = "No";
-        }
-        document.getElementById('secondChance').style.display = 'none';
-    }
+  
     function submitCustomPlan() {
         const date = document.getElementById('date').value;
         const place = document.getElementById('place').value;
@@ -447,6 +435,21 @@
         document.getElementById('finalMessage').style.display = 'none';
 
     }
+
+    var Answerings = "Yes";
+    function handleSecondChance(answer) {
+        if (answer === 'yes') {
+            alert("Hah! I knew it 😁");
+            document.getElementById('para25').style.display = 'block';
+        } else {
+            alert("Oof. Brutal honesty 😅 But it's okay.");
+            document.getElementById('herNoteSection').style.display = 'block';
+            document.getElementById('nextBtn').style.display = 'none';
+
+            Answerings = "No";
+        }
+        document.getElementById('secondChance').style.display = 'none';
+    }
     function submitNote() {
         const note = document.getElementById('herNote').value;
         if (!note.trim()) {
@@ -459,18 +462,12 @@
         document.getElementById('herNoteSection').style.display = 'none';
         document.getElementById('para14').style.display = 'block';
         // document.getElementById('ign').style.display = 'block';
-        if (Answerings == "No") {
-            alert("Understood! have a nice day");
-        }
-        else 
-        {
-
-            saveToFile();
-        }
+   
+        saveToFile(Answerings);
         // Optional: You can also send this note to the server for saving if needed
     }
 
-    function saveToFile() {
+    function saveToFile(answer) {
         const date = document.getElementById('date').value || 'Surprise Plan';
         const place = document.getElementById('place').value || 'Surprise Location';
         const note = document.getElementById('herNote').value || 'No note given';
@@ -492,7 +489,12 @@
         })
             .then(res => {
                 if (res.ok) {
+                    if (answer == "No") {
+                        alert("Understood, Have a Nice Day Shai!");
+                    } else 
+                    { 
                     alert("All Set can't wait to see you! 💾");
+                    }
                 } else {
                     alert("Failed to save 😢");
                 }
