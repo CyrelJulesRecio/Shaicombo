@@ -131,6 +131,7 @@
     <None Include="bin\Release\net6.0\SweetProject_Cy.dll" />
     <None Include="bin\Release\net6.0\SweetProject_Cy.exe" />
     <None Include="bin\Release\net6.0\SweetProject_Cy.pdb" />
+    <None Include="wwwroot\UserPlan.txt" />
   </ItemGroup>
 
   <ItemGroup>

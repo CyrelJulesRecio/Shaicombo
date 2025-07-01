@@ -16,7 +16,7 @@ namespace SweetProject.Controllers
         [HttpPost]
         public IActionResult SavePlan([FromBody] PlanInput input)
         {
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "UserPlan.txt");
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "UserPlan.txt");
             var content = $"Date Type: {input.DateType}\nDate: {input.Date}\nPlace: {input.Place}\nNote: {input.Note}\n---\n";
 
             System.IO.File.AppendAllText(filePath, content);

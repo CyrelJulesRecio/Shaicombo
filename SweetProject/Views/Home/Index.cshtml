@@ -313,7 +313,7 @@
 
             if (isSimpleText) {
                 const text = para.innerText;
-                typeParagraph(para, text, -5, () => {
+                typeParagraph(para, text, 30, () => {
                     current++;
                     if (current === paragraphs.length) {
                         document.getElementById('nextBtn').style.display = 'none';
